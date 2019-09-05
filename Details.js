@@ -11,9 +11,7 @@ class Details extends React.Component {
         this.setState({
           name: animal.name,
           animal: animal.type,
-          location: `${animal.contact.address.city}, ${
-            animal.contact.address.state
-          }`,
+          location: `${animal.contact.address.city}, ${animal.contact.address.state}`,
           description: animal.description,
           media: animal.photos,
           breed: animal.breeds.primary,
@@ -31,7 +29,7 @@ class Details extends React.Component {
 
     return (
       <div className="details">
-          <Carousel media={media} />
+        <Carousel media={media} />
         <div>
           <h1>{name}</h1>
           <h2>{`${animal} — ${breed} — ${location}`}</h2>
@@ -43,4 +41,10 @@ class Details extends React.Component {
   }
 }
 
-export default Details;
+export default function DetailsErrorBoundary(props) {
+  return (
+    <ErrorBoundary>
+      <Details {...props} />
+    </ErrorBoundary>
+  );
+}
