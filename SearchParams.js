@@ -6,6 +6,7 @@ import pet, {
   ANIMALS
 } from "@frontendmasters/pet";
 import useDropdown from "./useDropdown";
+import Results from "./Results";
 
 const SearchParams = () => {
   const [location, setLocation] = useState("San Francisco, CA");
@@ -60,6 +61,7 @@ const SearchParams = () => {
         <button> Submit </button>
       </label>
     </form>
+    <Results pets={pets} />;
   </div>
   );
 };

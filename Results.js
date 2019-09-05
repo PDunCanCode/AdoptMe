@@ -1,5 +1,8 @@
 import React from "react";
 import Pet from "./Pet";
+import { Router } from "@reach/router";
+import Details from "./Details";
+
 
 const Results = ({ pets }) => {
   return (
